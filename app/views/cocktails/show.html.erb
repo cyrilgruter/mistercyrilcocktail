@@ -1,0 +1,21 @@
+<div class="text-center">
+  <h1><%= @cocktail.name %></h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
+      <ul class="list-unstyled">
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.description %>
+            <%= dose.ingredient.name %>
+          </li>
+        <% end %>
+      </ul>
+      <%= render "doses/form" %>
+      <p class="text-center" style= "margin: 100px" > <%= link_to 'Back', cocktails_path %> </p>
+
+    </div>
+  </div>
+</div>
+
